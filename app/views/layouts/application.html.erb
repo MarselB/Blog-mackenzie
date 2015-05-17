@@ -7,6 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="sidebar">
+		<div id="logo"> <!-- LOGO -->
+			<%= link_to root_path do %>
+			<%= image_tag "logo.svg" %>
+			<% end %>
+	</div>
+
+		<ul>
+			<li class="category">Website</li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li>About</li>
+		</ul>
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://www.facebook.com/marsel.bogar">Facebook</li>
+			<li><a href="https://twitter.com/M4rseel">Twitter</a></li>
+			<li><a href="http://www.stumbleupon.com/stumbler/marselbogar/lists">Stumbleupon</a></li>
+			<li><a href="https://github.com/MarselB">GitHub</a></li>
+			<li><a href="mailto:bogarmarsel@gmail.com">E-mail</a></li>
+
+		</ul>
+	</div>
 
 <%= yield %>
 
