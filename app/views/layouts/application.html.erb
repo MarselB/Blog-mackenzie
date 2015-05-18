@@ -3,6 +3,7 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http:fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,9 +30,27 @@
 			<li><a href="mailto:bogarmarsel@gmail.com">E-mail</a></li>
 
 		</ul>
+		<p class="sign_ing">Admin Login</p>
 	</div>
 
-<%= yield %>
+	<div id="main_content">
+		<div id="header">
+			<p>All Posts</p>
+			<div class="buttons">
+				<button class="button"><%= link_to "New Post", new_post_path %>
+				</button>
+				<button class="button">Log Out</button>
+			</div>
+		</div>
+
+		<% flash.each do |name, msg| %>
+		<%= content_tag(:div, msg, class: "alert")%>
+		<% end %>
+
+		<%= yield %>
+	</div>
+
+
 
 </body>
 </html>
