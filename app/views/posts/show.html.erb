@@ -5,6 +5,9 @@
 
  <p class"date">
 	Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+	<%= link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Do you really want to delete this post?'} %>
+
  </p>
 
  <p class="body">
